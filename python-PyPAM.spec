@@ -13,7 +13,6 @@ Source0:	http://www.pangalactic.org/PyPAM/%{module}-%{version}.tar.gz
 URL:		http://www.pangalactic.org/PyPAM/
 BuildRequires:	pam-devel
 BuildRequires:	python-devel >= 1:2.3
-BuildRequires:	rpm-pythonprov
 BuildRequires:	sed >= 4.0
 %pyrequires_eq	python-modules
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
