@@ -12,7 +12,8 @@ Source0:	http://www.pangalactic.org/PyPAM/%{module}-%{version}.tar.gz
 # Source0-md5:	7e8c283cbd6e85e0bbff8e265a3db9e5
 URL:		http://www.pangalactic.org/PyPAM/
 BuildRequires:	pam-devel
-BuildRequires:	python-devel >= 2.3
+BuildRequires:	python-devel >= 1:2.3
+BuildRequires:	python-devel < 1:2.4
 BuildRequires:	rpm-pythonprov
 BuildRequires:	sed >= 4.0
 %pyrequires_eq	python-modules
@@ -34,6 +35,7 @@ sed -i -e 's#python1.5/Python.h#python2.3/Python.h#g' PAMmodule.c
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	pyexecdir=%{py_sitedir} \
 	DESTDIR=$RPM_BUILD_ROOT
