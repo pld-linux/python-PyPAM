@@ -13,7 +13,6 @@ Source0:	http://www.pangalactic.org/PyPAM/%{module}-%{version}.tar.gz
 URL:		http://www.pangalactic.org/PyPAM/
 BuildRequires:	pam-devel
 BuildRequires:	python-devel >= 1:2.3
-BuildRequires:	python-devel < 1:2.4
 BuildRequires:	rpm-pythonprov
 BuildRequires:	sed >= 4.0
 %pyrequires_eq	python-modules
@@ -27,7 +26,7 @@ Wi±zania PAM dla pythona.
 
 %prep
 %setup -q -n %{module}-%{version}
-sed -i -e 's#python1.5/Python.h#python2.3/Python.h#g' PAMmodule.c
+sed -i -e 's#python1.5/Python.h#python%{py_ver}/Python.h#g' PAMmodule.c
 
 %build
 %configure2_13
