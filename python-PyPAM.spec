@@ -2,7 +2,7 @@
 %define		module	PyPAM
 
 Summary:	PAM bindings for Python
-Summary(pl):	Wi±zania pythona do obs³ugi PAM
+Summary(pl.UTF-8):   WiÄ…zania pythona do obsÅ‚ugi PAM
 Name:		python-%{module}
 Version:	0.4.2
 Release:	2
@@ -20,8 +20,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 PAM (Pluggable Authentication Module) bindings for Python.
 
-%description -l pl
-Wi±zania PAM dla pythona.
+%description -l pl.UTF-8
+WiÄ…zania PAM dla pythona.
 
 %prep
 %setup -q -n %{module}-%{version}
