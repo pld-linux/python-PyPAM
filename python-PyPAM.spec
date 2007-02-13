@@ -2,7 +2,7 @@
 %define		module	PyPAM
 
 Summary:	PAM bindings for Python
-Summary(pl.UTF-8):   Wiązania pythona do obsługi PAM
+Summary(pl.UTF-8):	Wiązania pythona do obsługi PAM
 Name:		python-%{module}
 Version:	0.4.2
 Release:	2
