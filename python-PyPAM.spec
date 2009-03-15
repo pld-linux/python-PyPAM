@@ -4,12 +4,12 @@
 Summary:	PAM bindings for Python
 Summary(pl.UTF-8):	Wiązania pythona do obsługi PAM
 Name:		python-%{module}
-Version:	0.4.2
-Release:	3
+Version:	0.5.0
+Release:	1
 License:	LGPL
 Group:		Development/Languages/Python
 Source0:	http://www.pangalactic.org/PyPAM/%{module}-%{version}.tar.gz
-# Source0-md5:	7e8c283cbd6e85e0bbff8e265a3db9e5
+# Source0-md5:	f1e7c2c56421dda28a75ace59a3c8871
 URL:		http://www.pangalactic.org/PyPAM/
 BuildRequires:	pam-devel
 BuildRequires:	python-devel >= 1:2.3
@@ -28,20 +28,21 @@ Wiązania PAM dla pythona.
 sed -i -e 's#python1.5/Python.h#python%{py_ver}/Python.h#g' PAMmodule.c
 
 %build
-%configure2_13
-%{__make}
+export CFLAGS="%{rpmcflags}"
+%{__python} setup.py build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	pyexecdir=%{py_sitedir} \
-	DESTDIR=$RPM_BUILD_ROOT
+%{__python} setup.py install \
+	--optimize=2 \
+	--root=$RPM_BUILD_ROOT
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README
+%doc ChangeLog NEWS README
 %attr(755,root,root) %{py_sitedir}/PAMmodule.so
+%{py_sitedir}/PyPAM-%{version}-*.egg-info
