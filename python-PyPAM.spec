@@ -10,6 +10,8 @@ License:	LGPL
 Group:		Development/Languages/Python
 Source0:	http://www.pangalactic.org/PyPAM/%{module}-%{version}.tar.gz
 # Source0-md5:	f1e7c2c56421dda28a75ace59a3c8871
+Patch0:		%{name}-destructor.patch
+Patch1:		%{name}-dlopen.patch
 URL:		http://www.pangalactic.org/PyPAM/
 BuildRequires:	pam-devel
 BuildRequires:	python-devel >= 1:2.3
@@ -25,6 +27,8 @@ Wiązania PAM dla pythona.
 
 %prep
 %setup -q -n %{module}-%{version}
+%patch0 -p1
+%patch1 -p1
 sed -i -e 's#python1.5/Python.h#python%{py_ver}/Python.h#g' PAMmodule.c
 
 %build
