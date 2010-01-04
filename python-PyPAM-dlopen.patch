@@ -1,0 +1,14 @@
+- do not require -devel package
+--- PyPAM-0.5.0/PAMmodule.c.org	2010-01-04 17:35:21.937278677 +0100
++++ PyPAM-0.5.0/PAMmodule.c	2010-01-04 17:35:36.688155084 +0100
+@@ -149,8 +149,8 @@
+     Py_INCREF(Py_None);
+     p->user_data = Py_None;
+     
+-    p->dlh1 = dlopen("libpam.so", RTLD_LAZY | RTLD_GLOBAL);
+-    p->dlh2 = dlopen("libpam_misc.so", RTLD_LAZY | RTLD_GLOBAL);
++    p->dlh1 = dlopen("libpam.so.0", RTLD_LAZY | RTLD_GLOBAL);
++    p->dlh2 = dlopen("libpam_misc.so.0", RTLD_LAZY | RTLD_GLOBAL);
+ 
+     return (PyObject *) p;
+ }

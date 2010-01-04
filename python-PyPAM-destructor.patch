@@ -1,0 +1,12 @@
+- use proper memmory deallocation (see: http://docs.python.org/c-api/memory.html)
+--- PyPAM-0.5.0/PAMmodule.c.org	2010-01-04 17:35:21.937278677 +0100
++++ PyPAM-0.5.0/PAMmodule.c	2010-01-04 17:46:09.922153881 +0100
+@@ -541,7 +541,7 @@
+     pam_end(self->pamh, PAM_SUCCESS);
+     dlclose(self->dlh2);
+     dlclose(self->dlh1);
+-    PyMem_DEL(self);
++    PyObject_DEL(self);
+ }
+ 
+ static PyObject * PyPAM_getattr(PyPAMObject *self, char *name)
