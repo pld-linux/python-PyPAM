@@ -34,15 +34,12 @@ Wiązania PAM dla pythona.
 sed -i -e 's#python1.5/Python.h#python%{py_ver}/Python.h#g' PAMmodule.c
 
 %build
-export CFLAGS="%{rpmcflags}"
-%{__python} setup.py build
+%py_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__python} setup.py install \
-	--optimize=2 \
-	--root=$RPM_BUILD_ROOT
+%py_install
 
 %clean
 rm -rf $RPM_BUILD_ROOT
