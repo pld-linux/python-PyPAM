@@ -13,6 +13,7 @@ Source0:	http://www.pangalactic.org/PyPAM/%{module}-%{version}.tar.gz
 Patch0:		%{name}-destructor.patch
 Patch1:		%{name}-dlopen.patch
 URL:		http://www.pangalactic.org/PyPAM/
+BuildRequires:	rpmbuild(macros) >= 1.710
 BuildRequires:	pam-devel
 BuildRequires:	python-devel >= 1:2.3
 BuildRequires:	python-modules
