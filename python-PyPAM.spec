@@ -9,7 +9,7 @@ Summary:	PAM bindings for Python
 Summary(pl.UTF-8):	Wiązania pythona do obsługi PAM
 Name:		python-%{module}
 Version:	0.5.0
-Release:	6
+Release:	7
 License:	LGPL v2.1
 Group:		Development/Languages/Python
 Source0:	http://www.pangalactic.org/PyPAM/%{module}-%{version}.tar.gz
